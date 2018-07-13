@@ -34,21 +34,6 @@ Vuldash allows managing projects ethical hacking together with the group of pent
 - Edit file application/config/app.php to change setting application.
 - Change config of server mail account to send notificacion of activation accounts.
 - Change values google_site_key and google_secret_key to use Captha Google.
-- Create and config .htaccess
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    #RewriteBase /dashboard
-    RewriteBase /
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    
-    #Develop
-    RewriteRule ^(.*)$ /vuldash/index.php/$1 [L]
-    
-    #Production
-    #RewriteRule ^(.*)$ /dashboard/index.php/$1 [L]
-</IfModule>
 
 
 # Usage
