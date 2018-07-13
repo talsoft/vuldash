@@ -1,0 +1,110 @@
+.table-hover>tbody>tr.critical>td, 
+.table-hover>tbody>tr.critical>th, 
+.table-hover>tbody>tr>.critical, 
+.table-hover>tbody>tr>td.critical, 
+.table-hover>tbody>tr>th.critical {
+  background-color: #EFA0CD !important;
+}
+
+.table-hover>tbody>tr.critical:hover>td, 
+.table-hover>tbody>tr.critical:hover>th, 
+.table-hover>tbody>tr:hover>.critical, 
+.table-hover>tbody>tr>td.critical:hover, 
+.table-hover>tbody>tr>th.critical:hover {
+  background-color: #E175B2 !important;
+}
+
+.table-hover>tbody>tr.high>td, 
+.table-hover>tbody>tr.high>th, 
+.table-hover>tbody>tr>.high, 
+.table-hover>tbody>tr>td.high, 
+.table-hover>tbody>tr>th.high {
+  background-color: #FF7E7E !important;
+}
+
+.table-hover>tbody>tr.high:hover>td, 
+.table-hover>tbody>tr.high:hover>th, 
+.table-hover>tbody>tr:hover>.high, 
+.table-hover>tbody>tr>td.high:hover, 
+.table-hover>tbody>tr>th.high:hover {
+  background-color: #FF5454 !important;
+}
+
+.table-hover>tbody>tr.medium>td, 
+.table-hover>tbody>tr.medium>th, 
+.table-hover>tbody>tr>.medium, 
+.table-hover>tbody>tr>td.medium, 
+.table-hover>tbody>tr>th.medium {
+  background-color: #FFE188 !important;
+}
+
+.table-hover>tbody>tr.medium:hover>td, 
+.table-hover>tbody>tr.medium:hover>th, 
+.table-hover>tbody>tr:hover>.medium, 
+.table-hover>tbody>tr>td.medium:hover, 
+.table-hover>tbody>tr>th.medium:hover {
+  background-color: #FFD864 !important;
+}
+
+.table-hover>tbody>tr.low>td, 
+.table-hover>tbody>tr.low>th, 
+.table-hover>tbody>tr>.low, 
+.table-hover>tbody>tr>td.low, 
+.table-hover>tbody>tr>th.low {
+  background-color: #D1FACB !important;
+}
+
+.table-hover>tbody>tr.low:hover>td, 
+.table-hover>tbody>tr.low:hover>th, 
+.table-hover>tbody>tr:hover>.low, 
+.table-hover>tbody>tr>td.low:hover, 
+.table-hover>tbody>tr>th.low:hover {
+  background-color: #ABF1A0 !important;
+}
+
+.table-hover>tbody>tr.info>td, 
+.table-hover>tbody>tr.info>th, 
+.table-hover>tbody>tr>.info, 
+.table-hover>tbody>tr>td.info, 
+.table-hover>tbody>tr>th.info {
+  background-color: #CCDCF5 !important;
+}
+
+.table-hover>tbody>tr.info:hover>td, 
+.table-hover>tbody>tr.info:hover>th, 
+.table-hover>tbody>tr:hover>.info, 
+.table-hover>tbody>tr>td.info:hover, 
+.table-hover>tbody>tr>th.info:hover {
+  background-color: #9FBAE4 !important;
+}
+
+.chart-legend > span {
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.chart-legend > span:last-child {
+  margin-right: 0;
+}
+.chart-legend > span > i {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  margin-top: -3px;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+.chart-total {
+    text-align: center;
+}
+.chart-total > span {
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
+  padding: 5px 10px          
+} 
