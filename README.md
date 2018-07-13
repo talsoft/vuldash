@@ -2,13 +2,10 @@
 
 Vuldash allows managing projects ethical hacking together with the group of pentester and the client, showing the problems concisely. Can generate business and technical reports, as also perform a life cycle of the project with the client.
 
-## FREE SOFTWARE
-- For the community.
-
-## CUSTOM PLUGINS
+## Custom Plugins
 - You can create your own plugin for your tools and import the data into the platform.
 
-## REPORTING
+## Reporting
 - You can generate professional reports with the format of your templates. (en,es)
 
 ## Customer Features
