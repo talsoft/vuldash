@@ -71,3 +71,8 @@ Vuldash allows managing projects ethical hacking together with the group of pent
 
 - Import XML Zap proxy Alerts
 - Import XML Openvas report (coming soon)
+
+# Templates Reports
+
+- You can change report template into directory vuldash/assets/odt-templates/
+- Add _en or _sp at the end of the name from choose that languages 
