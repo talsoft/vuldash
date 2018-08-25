@@ -76,3 +76,10 @@ Vuldash allows managing projects ethical hacking together with the group of pent
 
 - You can change report template into directory vuldash/assets/odt-templates/
 - Add _en or _sp at the end of the name from choose that languages 
+
+# Tips
+
+- You have error in generate report or incidents?
+  1. Check folder "tmp" in the site root and set permission for write.
+  2. Check the report language in the proyect properties with the name of report template
+
