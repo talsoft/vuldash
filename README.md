@@ -42,19 +42,19 @@ https://www.youtube.com/watch?v=2R503Grq_HE
 # Initial Setup
 
 - Create directory vuldash and clone vuldash
-  mkdir /var/www/vuldash
-  cd /var/www/vuldash
-  git clone https://github.com/talsoft/vuldash.git dashboard
+  1. mkdir /var/www/vuldash
+  2. cd /var/www/vuldash
+  3. git clone https://github.com/talsoft/vuldash.git dashboard
 - Apache VirtualHost Minimal setup
-  nano /etc/apache2/sites-enabled/000-default.conf
+  1. nano /etc/apache2/sites-enabled/000-default.conf
 - Into VirtualHost Change
-  DocumentRoot --> /var/www/vuldash
-  Directory  -->  <Directory /var/www/vuldash>
+  1. DocumentRoot --> /var/www/vuldash
+  2. Directory  -->  <Directory /var/www/vuldash>
 
 # Database
 
 - Edit file application/config/database.php to change credentials conection.
-  nano dashboard/application/config/database.php
+  1. nano dashboard/application/config/database.php
 - Create database and user vuldash
 - Import vuldashdb.sql into mysql database
 
