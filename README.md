@@ -41,12 +41,20 @@ https://www.youtube.com/watch?v=2R503Grq_HE
 
 # Initial Setup
 
-- Create directory vuldash and inside the directory dashboard
-- Copy the content folder in the virtualhost directory of your web server into dashboard (eg: /var/www/vuldash/dashboard)
+- Create directory vuldash and clone vuldash
+  mkdir /var/www/vuldash
+  cd /var/www/vuldash
+  git clone https://github.com/talsoft/vuldash.git dashboard
+- Apache VirtualHost Minimal setup
+  nano /etc/apache2/sites-enabled/000-default.conf
+- Into VirtualHost Change
+  DocumentRoot --> /var/www/vuldash
+  Directory  -->  <Directory /var/www/vuldash>
 
 # Database
 
 - Edit file application/config/database.php to change credentials conection.
+  nano dashboard/application/config/database.php
 - Create database and user vuldash
 - Import vuldashdb.sql into mysql database
 
@@ -59,7 +67,7 @@ https://www.youtube.com/watch?v=2R503Grq_HE
 
 # Usage
 
-- Access vuldash (eg: http://localhost/vuldash/dashboard)
+- Access vuldash (eg: http://localhost/dashboard)
 - First login with user: admin@vuldash.com pass: admin
 - Add users of vuldash with roles administrator and tester. 
 - Add the system tables of type of incidents state, project type, project state, incidents type and objetive state.
