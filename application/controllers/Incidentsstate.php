@@ -11,10 +11,7 @@ class Incidentsstate extends CI_Controller {
 
     $this->load->library(array('session'));
     $this->load->helper(array('form_helper'));
-  } 
 
-  public function index()
-  {
     if($this->session->userdata('is_logged_in') == FALSE)
       redirect(base_url().'login');
 
@@ -22,8 +19,11 @@ class Incidentsstate extends CI_Controller {
     {
       $this->session->set_flashdata('incorrect_credentials', 'You do not have permissions for the requested action');
       redirect(base_url());
-    }
+    }    
+  } 
 
+  public function index()
+  {
     $data['navbar'] = $this->load->view('partials/admin/navbar', '', true);
     $data['menubar'] = $this->load->view('partials/admin/menubar', '', true);
     $data['profileId'] = $this->session->userdata('profileId');

@@ -12,19 +12,19 @@ class Incidents extends CI_Controller {
     
     $this->load->library(array('session', 'word'));
     $this->load->helper(array('form_helper'));
-  } 
 
-  public function index()
-  {
-    if($this->session->userdata('is_logged_in') == FALSE)
-      redirect(base_url().'login');
-
+		if($this->session->userdata('is_logged_in') == FALSE)
+      redirect(base_url().'login');    
+      
     if(strpos('AT', $this->session->userdata('profileId')) === false)
     {
       $this->session->set_flashdata('incorrect_credentials', 'You do not have permissions for the requested action');
       redirect(base_url());
-    }
+    }      
+  } 
 
+  public function index()
+  {
     if($this->session->userdata('profileId') == 'A')
     {
       $data['navbar'] = $this->load->view('partials/admin/navbar', '', true);
@@ -386,4 +386,46 @@ class Incidents extends CI_Controller {
       echo json_encode($result); 
     }
   }
+
+  public function openvasplugin($projectId, $plugin)
+  {
+    $config = array('url'         => 'incidents/openvasplugin/' . $projectId . '/' . $plugin, 
+                    'upload_path' => './tmp/' );
+    $this->load->library($plugin, $config, 'myplugin');
+
+    if(!$this->security->xss_clean($this->input->post("process")))
+    {
+      $this->output->set_output($this->myplugin->show());    
+    }
+    else 
+    {
+      $result = $this->myplugin->process();
+      if($result['status'] == 'ok')
+      {
+        $project = $this->Project_model->get($projectId);
+
+        $data = json_decode($result['json'], true);
+        for ($i=0; $i < sizeof($data); $i++) 
+        {
+          $incident = new Incident();
+          $incident->projectId = $projectId;
+          $incident->date = date('Y-m-d H:i:s');
+          $incident->typeId = 0;
+          $incident->cvss = $data[$i]['riskcode'];
+          $incident->objectiveTypeId = 0;
+          $incident->objective = $data[$i]['host'];
+          $incident->description = $data[$i]['name'];    
+          $incident->stateId = 1;
+          $incident->detail = $data[$i]['desc'];
+          $incident->abstract = $data[$i]['desc'];
+          $incident->suggestion = $data[$i]['reference'];
+          $incident->userId = $this->session->userdata('userId');
+          $incident->stageId = $project->stageId;
+          $this->Incident_model->save($incident);
+        }
+      }
+      $this->output->set_content_type('application/json');
+      echo json_encode($result); 
+    }
+  }  
 }

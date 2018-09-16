@@ -16,6 +16,7 @@ class Login extends CI_Controller {
   {
     $data['token'] = $this->token();  
     $data['googlesitekey'] = $this->config->item('google_site_key'); 
+    $data['use_googlecaptcha'] = $this->config->item('use_googlecaptcha');
     $this->load->view('login', $data);
   }
 
@@ -25,7 +26,7 @@ class Login extends CI_Controller {
     {
       $this->form_validation->set_rules('username', 'Username', 'required');
       $this->form_validation->set_rules('password', 'Password', 'required');
-      if(!in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')))
+      if(!in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')) && $this->config->item('use_googlecaptcha'))
         $this->form_validation->set_rules('g-recaptcha-response','Captcha','callback_recaptcha');
 
       if($this->form_validation->run() == FALSE)

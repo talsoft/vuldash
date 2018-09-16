@@ -10,13 +10,13 @@ class Dashboard extends CI_Controller {
     $this->load->model(array('User_model', 'Project_model', 'Incident_model', 'Notification_model'));
     $this->load->library(array('session'));
     $this->load->helper(array('form_helper'));
+
+		if($this->session->userdata('is_logged_in') == FALSE)
+			redirect(base_url().'login');    
   }	
 
 	public function index()
 	{
-		if($this->session->userdata('is_logged_in') == FALSE)
-			redirect(base_url().'login');
-
 		if($this->session->userdata('profileId') == 'A')
 		{
 			$data['navbar'] = $this->load->view('partials/admin/navbar', '', true);

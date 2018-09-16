@@ -10,10 +10,7 @@ class Users extends CI_Controller {
     $this->load->model(array('User_model', 'Client_model', 'Project_model', 'Notification_model', 'Projectstate_model'));
     $this->load->library(array('session'));
     $this->load->helper(array('form_helper'));
-  } 
 
-  public function index($type)
-  {
     if($this->session->userdata('is_logged_in') == FALSE)
       redirect(base_url().'login');
 
@@ -21,8 +18,11 @@ class Users extends CI_Controller {
     {
       $this->session->set_flashdata('incorrect_credentials', 'You do not have permissions for the requested action');
       redirect(base_url());
-    }
+    }    
+  } 
 
+  public function index($type)
+  {
     $data['navbar'] = $this->load->view('partials/admin/navbar', '', true);
     $data['menubar'] = $this->load->view('partials/admin/menubar', '', true);
     $data['type'] = $type;

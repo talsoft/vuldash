@@ -11,10 +11,7 @@ class Projects extends CI_Controller {
 
     $this->load->library(array('session', 'word'));
     $this->load->helper(array('form_helper'));
-  } 
 
-  public function index()
-  {
     if($this->session->userdata('is_logged_in') == FALSE)
       redirect(base_url().'login');
 
@@ -22,8 +19,11 @@ class Projects extends CI_Controller {
     {
       $this->session->set_flashdata('incorrect_credentials', 'You do not have permissions for the requested action');
       redirect(base_url());
-    }
+    }    
+  } 
 
+  public function index()
+  {
     if($this->session->userdata('profileId') == 'A')
     {
       $data['navbar'] = $this->load->view('partials/admin/navbar', '', true);
