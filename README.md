@@ -28,6 +28,9 @@ https://www.youtube.com/watch?v=2R503Grq_HE
 - Andrés Gaggini @AndresGaggini
 - Leandro Ferrari @avatar_leandro www.talsoft.com.ar
 
+# Colaborators
+- Cristian Maureira @subredes
+
 # Requirements
 
 - Apache php 5.6 (modules php5.6-gd php5.6-json php5.6-mbstring php5.6-xsl php5.6-zip) 
@@ -50,6 +53,9 @@ https://www.youtube.com/watch?v=2R503Grq_HE
 - Into VirtualHost Change
   1. DocumentRoot --> /var/www/vuldash
   2. Directory  -->  <Directory /var/www/vuldash>
+- Apache settings
+  1. a2enmod rewrite
+  2. services apache2 restart
 
 # Database
 
